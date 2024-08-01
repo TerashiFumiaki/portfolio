@@ -1,0 +1,275 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #1e1e1e;
+}
+
+/* Header */
+header {
+    position: relative;
+    height: 100vh;
+    background: radial-gradient(circle, #1f1f1f, #000);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.header-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    animation: slideInLeft 1s ease-out;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: textSlideInRight 1s ease-out;
+}
+
+.scroll-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    animation: buttonSlideIn 1s ease-out;
+}
+
+.scroll-link:hover {
+    background: #ff9068;
+    color: #fff;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes textSlideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sections */
+.about, .skills, .projects, .contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about {
+    background: #292929;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideInUp 1.5s ease-out;
+}
+
+.skills {
+    background: #1a1a1a;
+}
+
+.skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideInUp 1.5s ease-out;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Skill Item */
+.skill-item {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: skillSlideIn 1s ease-out;
+}
+
+.skill-item h3 {
+    margin-bottom: 10px;
+}
+
+.skill-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Remove skill-bar and its styles */
+
+
+/* Projects */
+.projects {
+    background: #292929;
+}
+
+.projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideInUp 1.5s ease-out;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-item {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: projectSlideIn 1s ease-out;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+}
+
+.project-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes skillSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes projectSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact {
+    background: #1a1a1a;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideInUp 1.5s ease-out;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact li {
+    margin: 10px 0;
+}
+
+.contact a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: text-decoration 0.3s ease;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+
+    .header-content p {
+        font-size: 1.2em;
+    }
+
+    .scroll-link {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+
+    .skill-grid, .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
